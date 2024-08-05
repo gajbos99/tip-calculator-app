@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Hide the spinners for Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide the spinners for Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+html {
+    font-size: 10px;
+}
+
+// Strong cyan
+$strong-cyan: hsl(172, 67%, 45%);
+
+// Neutral
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+// Font
+
+$space-mono: 'Space Mono', monospace;
+.splitter-logo {
+    margin: 0 auto;
+    margin-top: 4.0rem;
+    margin-bottom: 4.0rem;
+}
+body {
+    min-height: 100svh;
+    background-color: $light-grayish-cyan;
+    display: flex;
+    justify-content: center;
+    font-family: $space-mono;
+    
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem;
+    border-radius: 2.5rem;
+}
+
+.bill-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.2rem;
+
+    label {
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: $grayish-cyan;
+        margin-bottom: 0.6rem;
+    }
+
+    .dollar {
+        position: absolute;
+            left: 20px;
+            top: 70%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 16px;
+            border-radius: 0.5rem;
+    }
+    input {
+        padding: 0.6rem 1.7rem 0.6rem 0.6rem;
+        border: none;
+        background-color: $very-light-grayish-cyan;
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $very-dark-cyan;
+        text-align: right;
+
+    }
+}
+
+label {
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: $grayish-cyan;
+        margin-bottom: 0.6rem;
+    }
+
+.tip-grid {
+    margin-top: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+
+    .tip {
+        padding: 0.6rem 1.7rem;
+        border: none;
+        background-color: $very-dark-cyan;
+        color: white;
+        font-weight: bold;
+        font-size: 2.4rem;
+        border-radius: 0.5rem;
+
+        &:hover {
+            background-color: $strong-cyan;
+            color: $very-dark-cyan;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.num-of-people {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    input {
+         padding: 0.6rem 1.7rem 0.6rem 0.6rem;
+        border: none;
+        background-color: $very-light-grayish-cyan;
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $very-dark-cyan;
+        text-align: right;
+        margin-bottom: 3.2rem;
+    }
+    .person {
+        position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 13px;
+            height: 16px;
+            border-radius: 0.5rem;
+    }
+}
+
+.results {
+    background-color: $very-dark-cyan;
+    color: $strong-cyan;
+    padding: 3.7rem 2.2rem 2.4rem 2.4rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tip-amount, .total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tip-text, .total-text {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+}
+.person-text {
+   font-size: 1.3rem;
+   font-weight: bold;
+   color:  $grayish-cyan;
+}
+
+.tip-amount {
+    margin-bottom: 2.0rem;
+}
+
+.total-result, .tip-result {
+    font-size: 3.2rem;
+    font-weight: bold;
+    letter-spacing: -0.67px;
+}
+
+.total-result {
+    margin-bottom: 3.2rem;
+}
+
+.reset-button {
+    margin-top: auto;
+    width: 100%;
+    font-family: inherit;
+    border: none;
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+    font-weight: bold;
+    font-size: 2.0rem;
+    border-radius: 0.5rem;
+    padding: 0.9rem 4.0rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $light-grayish-cyan;
+    }
+}
+
+.custom-tip {
+        width: 100%;
+        background-color: $very-light-grayish-cyan;
+        border: none;
+        font-weight: bold;
+        font-size: 2.4rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        color: $strong-cyan;
+
+        &::placeholder {
+            color: $strong-cyan;
+            margin: auto;
+        }
+}
+
+.tip.selected {
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+}
+
+@media screen and (min-width: 855px) {
+
+    .splitter-logo {
+        margin-top: 16.3rem;
+        margin-bottom: 8.7rem;
+    }
+    .container {
+        flex-direction: row;
+        max-width: 920px;
+        gap: 4.8rem;
+    }
+
+    .tip-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .results {
+        height: 100%;
+        width: 41.3rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .reset-button {
+        display: block;
+        justify-self: flex-end;
+        padding: 0.9rem 4.0rem;
+    }
+}
